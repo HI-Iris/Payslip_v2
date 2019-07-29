@@ -3,30 +3,38 @@ package com.myob.iris;
 import java.util.Scanner;
 
 public class Starter {
+    private Validator validator = new Validator();
 
     public void start() {
         Scanner userInput = new Scanner(System.in);
         System.out.println("-*-*-*-*-Welcome to the payslip generator!-*-*-*-*-");
-        System.out.println("Please select the input method: \n1. CSV file\n2. Console");
-        String option = userInput.nextLine();
-        switch (option){
-            case "1":
-                System.out.println("New features coming soon");
-                break;
-            case "2":
-                System.out.println("nice choice");
-                break;
-            default:
-                System.out.println("I don't understand, please select from 1 or 2");
-                break;
-
-        }
-//        System.out.println("Please enter you given name:");
-//        String givenName = userInput.nextLine();
-//        System.out.println("Please enter you family name:");
-//        String familyName = userInput.nextLine();
-//        System.out.println("Please enter your annual salary:");
-//        System.out.println("Please enter your super rate:");
+        boolean inputFlag;
+        Controller controller = null;
+        do {
+            System.out.println("Please select your preferred input method: \n1. CSV file\n2. Console");
+            String option = userInput.nextLine();
+            switch (option) {
+                case "1":
+                    System.out.println("New features coming soon");
+                    controller = new FileController(validator);
+                    inputFlag = false;
+                    break;
+                case "2":
+                    System.out.println("Nice choice");
+                    controller = new ConsoleController(validator);
+                    inputFlag = false;
+                    break;
+                default:
+                    System.out.println("I don't understand, please select from 1 or 2");
+                    inputFlag = true;
+                    break;
+            }
+        } while (inputFlag);
+        BasicInfo basicInfo = controller.getBasicInfo();
+        PayslipGenerator payslipGenerator = new PayslipGenerator(basicInfo);
+        Payslip payslip = payslipGenerator.generate();
+        System.out.println("Here is your payslip:");
+        System.out.println(payslip);
     }
 
 }
