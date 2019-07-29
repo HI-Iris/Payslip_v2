@@ -3,11 +3,11 @@ package com.myob.iris;
 import java.util.Scanner;
 
 public class ConsoleController extends Controller {
+    Scanner scanner = new Scanner(System.in);
 
     public ConsoleController(Validator validator) {
         super(validator);
     }
-
 
     @Override
     BasicInfo getBasicInfo() {
@@ -20,28 +20,41 @@ public class ConsoleController extends Controller {
 
     @Override
     String getGivenName() {
-        Scanner scanner = new Scanner(System.in);
         String givenName;
-        do{
+        do {
             System.out.println("Please enter your given name:");
             givenName = scanner.nextLine();
-        }while(!validator.isLetter(givenName));
-
-        return null;
+        } while (!validator.isLetter(givenName));
+        return givenName;
     }
 
     @Override
     String getFamilyName() {
-        return null;
+        String familyName;
+        do {
+            System.out.println("Please enter your family name:");
+            familyName = scanner.nextLine();
+        } while (!validator.isLetter(familyName));
+        return familyName;
     }
 
     @Override
     int getSuperRate() {
-        return 0;
+        String superRate;
+        do {
+            System.out.println("Please enter your super rate:");
+            superRate = scanner.nextLine();
+        } while (!validator.isNumber(superRate));
+        return Integer.parseInt(superRate);
     }
 
     @Override
     int getSalary() {
-        return 0;
+        String salary;
+        do {
+            System.out.println("Please enter your salary:");
+            salary = scanner.nextLine();
+        } while (!validator.isNumber(salary));
+        return Integer.parseInt(salary);
     }
 }
