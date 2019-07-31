@@ -1,4 +1,4 @@
-package com.myob.iris;
+package com.myob.iris.Service;
 
 public class Validator {
     public boolean isLetter(String testString) {
@@ -7,5 +7,9 @@ public class Validator {
 
     public boolean isNumber(String testString){
         return testString.matches("[0-9]+");
+    }
+
+    public boolean isDate(String testString){
+        return false;
     }
 }

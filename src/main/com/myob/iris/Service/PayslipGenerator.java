@@ -1,4 +1,7 @@
-package com.myob.iris;
+package com.myob.iris.Service;
+
+import com.myob.iris.Model.BasicInfo;
+import com.myob.iris.Model.Payslip;
 
 public class PayslipGenerator {
     private BasicInfo basicInfo;

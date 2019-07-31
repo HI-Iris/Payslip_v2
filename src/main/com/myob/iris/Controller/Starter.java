@@ -1,4 +1,9 @@
-package com.myob.iris;
+package com.myob.iris.Controller;
+
+import com.myob.iris.Model.BasicInfo;
+import com.myob.iris.Model.Payslip;
+import com.myob.iris.Service.PayslipGenerator;
+import com.myob.iris.Service.Validator;
 
 import java.util.Scanner;
 

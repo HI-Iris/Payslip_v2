@@ -1,4 +1,4 @@
-package com.myob.iris;
+package com.myob.iris.Model;
 
 public class BasicInfo {
     private String givenName;
@@ -21,8 +21,7 @@ public class BasicInfo {
         return salary;
     }
 
-    @Override
-    public String toString() {
+    public String getFullName() {
         return givenName + ' ' + familyName;
     }
 }

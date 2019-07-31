@@ -1,9 +1,12 @@
-package com.myob.iris;
+package com.myob.iris.Controller;
+
+import com.myob.iris.Model.BasicInfo;
+import com.myob.iris.Service.Validator;
 
 import java.util.Scanner;
 
 public class ConsoleController extends Controller {
-    Scanner scanner = new Scanner(System.in);
+    private Scanner scanner = new Scanner(System.in);
 
     public ConsoleController(Validator validator) {
         super(validator);

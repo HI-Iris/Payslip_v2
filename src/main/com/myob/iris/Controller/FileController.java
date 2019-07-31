@@ -1,6 +1,9 @@
-package com.myob.iris;
+package com.myob.iris.Controller;
 
-public class FileController extends Controller{
+import com.myob.iris.Model.BasicInfo;
+import com.myob.iris.Service.Validator;
+
+public class FileController extends Controller {
     public FileController(Validator validator) {
         super(validator);
     }
