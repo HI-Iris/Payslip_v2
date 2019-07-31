@@ -3,6 +3,8 @@ package com.myob.iris;
 import com.myob.iris.Service.Validator;
 import org.junit.Test;
 
+import java.util.Locale;
+
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -50,5 +52,35 @@ public class ValidatorTest {
     public void givenLettersTestIsDateShouldReturnFalse(){
         String testString = "thisIsLetter";
         assertFalse(validator.isDate(testString));
+    }
+
+    @Test
+    public void givenNumbersTestIsDateShouldReturnFalse(){
+        String testString = "1234";
+        assertFalse(validator.isDate(testString));
+    }
+
+    @Test
+    public void givenLettersAndNumbersTestIsDateShouldReturnFalse(){
+        String testString = "123ABC";
+        assertFalse(validator.isDate(testString));
+    }
+
+    @Test
+    public void givenDateString1TestIsDateShouldReturnTrue(){
+        String testString = "10 March";
+        assertTrue(validator.isDate(testString));
+    }
+
+    @Test
+    public void givenDateString2TestIsDateShouldReturnTrue(){
+        String testString = "10 Mar";
+        assertTrue(validator.isDate(testString));
+    }
+
+    @Test
+    public void givenDateStringLeapTestIsDateShouldReturnTrue(){
+        String testString = "28 Feb 2000";
+        assertTrue(validator.isDate(testString));
     }
 }

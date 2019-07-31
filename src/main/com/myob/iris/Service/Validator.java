@@ -1,5 +1,9 @@
 package com.myob.iris.Service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+
 public class Validator {
     public boolean isLetter(String testString) {
         return testString.matches("[a-zA-Z]+");
@@ -10,6 +14,14 @@ public class Validator {
     }
 
     public boolean isDate(String testString){
-        return false;
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM", Locale.ENGLISH);
+        dateFormat.setLenient(false);
+        try {
+            dateFormat.parse(testString.trim());
+        } catch (ParseException e) {
+            System.out.println(e);
+            return false;
+        }
+        return true;
     }
 }
