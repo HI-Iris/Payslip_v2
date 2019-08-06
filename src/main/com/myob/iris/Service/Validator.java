@@ -9,11 +9,11 @@ public class Validator {
         return testString.matches("[a-zA-Z]+");
     }
 
-    public boolean isNumber(String testString){
+    public boolean isNumber(String testString) {
         return testString.matches("[0-9]+");
     }
 
-    public boolean isDate(String testString){
+    public boolean isDate(String testString) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM", Locale.ENGLISH);
         dateFormat.setLenient(false);
         try {

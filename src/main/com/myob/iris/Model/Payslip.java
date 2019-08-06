@@ -8,6 +8,14 @@ public class Payslip {
     private int netIncome;
     private int superAmount;
 
+    public Payslip(String staffName, int annualSalary, int grossIncome, int netIncome, int superAmount) {
+        this.staffName = staffName;
+        this.annualSalary = annualSalary;
+        this.grossIncome = grossIncome;
+        this.netIncome = netIncome;
+        this.superAmount = superAmount;
+    }
+
 
     @Override
     public String toString() {
