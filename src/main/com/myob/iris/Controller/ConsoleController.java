@@ -18,7 +18,7 @@ public class ConsoleController extends Controller {
         String familyName = getFamilyName();
         int superRate = getSuperRate();
         int salary = getSalary();
-        return new BasicInfo(givenName, familyName, superRate, salary);
+        return new BasicInfo(givenName, familyName, superRate, salary, startDate, endDate);
     }
 
     @Override

@@ -3,17 +3,17 @@ package com.myob.iris.Model;
 public class Payslip {
 
     private String staffName;
-    private int annualSalary;
     private int grossIncome;
     private int netIncome;
     private int superAmount;
+    private String payPeriod;
 
-    public Payslip(String staffName, int annualSalary, int grossIncome, int netIncome, int superAmount) {
+    public Payslip(String staffName, int grossIncome, int netIncome, int superAmount, String payPeriod) {
         this.staffName = staffName;
-        this.annualSalary = annualSalary;
         this.grossIncome = grossIncome;
         this.netIncome = netIncome;
         this.superAmount = superAmount;
+        this.payPeriod = payPeriod;
     }
 
 
@@ -21,7 +21,7 @@ public class Payslip {
     public String toString() {
         return "Your payslip has been generated:\n" +
                 "Name='" + staffName + '\n' +
-                "Pay Period:" + annualSalary + '\n' +
+                "Pay Period:" + payPeriod + '\n' +
                 "Gross Income:" + grossIncome + '\n' +
                 "Income Tax" + netIncome + '\n' +
                 "Net Income:" + netIncome + '\n' +
