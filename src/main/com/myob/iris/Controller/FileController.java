@@ -32,4 +32,14 @@ public class FileController extends Controller {
     int getSalary() {
         return 0;
     }
+
+    @Override
+    String getStartDate() {
+        return null;
+    }
+
+    @Override
+    String getEndDate() {
+        return null;
+    }
 }

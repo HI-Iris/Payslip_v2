@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class ConsoleController extends Controller {
     private Scanner scanner = new Scanner(System.in);
 
-    public ConsoleController(Validator validator) {
+    ConsoleController(Validator validator) {
         super(validator);
     }
 
@@ -18,6 +18,8 @@ public class ConsoleController extends Controller {
         String familyName = getFamilyName();
         int superRate = getSuperRate();
         int salary = getSalary();
+        String startDate = getStartDate();
+        String endDate = getEndDate();
         return new BasicInfo(givenName, familyName, superRate, salary, startDate, endDate);
     }
 
@@ -59,5 +61,25 @@ public class ConsoleController extends Controller {
             salary = scanner.nextLine();
         } while (!validator.isNumber(salary));
         return Integer.parseInt(salary);
+    }
+
+    @Override
+    String getStartDate() {
+        String startDate;
+        do {
+            System.out.println("Please enter your pay start date:");
+            startDate = scanner.nextLine();
+        } while (!validator.isDate(startDate));
+        return startDate;
+    }
+
+    @Override
+    String getEndDate() {
+        String endDate;
+        do {
+            System.out.println("Please enter your pay start date:");
+            endDate = scanner.nextLine();
+        } while (!validator.isDate(endDate));
+        return endDate;
     }
 }

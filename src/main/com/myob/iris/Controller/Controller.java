@@ -15,4 +15,6 @@ public abstract class Controller {
     abstract String getFamilyName();
     abstract int getSuperRate();
     abstract int getSalary();
+    abstract String getStartDate();
+    abstract String getEndDate();
 }

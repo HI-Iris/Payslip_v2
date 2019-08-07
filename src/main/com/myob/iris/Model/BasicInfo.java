@@ -7,10 +7,10 @@ public class BasicInfo {
     private String familyName;
     private int superRate;
     private int annualSalary;
-    private Date startDate;
-    private Date endDate;
+    private String startDate;
+    private String endDate;
 
-    public BasicInfo(String givenName, String familyName, int superRate, int annualSalary, Date startDate, Date endDate) {
+    public BasicInfo(String givenName, String familyName, int superRate, int annualSalary, String startDate, String endDate) {
         this.givenName = givenName;
         this.familyName = familyName;
         this.superRate = superRate;
@@ -28,14 +28,11 @@ public class BasicInfo {
     }
 
     public String getFullName() {
-        return givenName + ' ' + familyName;
+        return givenName + " " + familyName;
     }
 
-    public Date getStartDate() {
-        return startDate;
+    public String getPayPeriod() {
+        return startDate + " - " + endDate;
     }
 
-    public Date getEndDate() {
-        return endDate;
-    }
 }

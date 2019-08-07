@@ -19,13 +19,13 @@ public class Payslip {
 
     @Override
     public String toString() {
-        return "Your payslip has been generated:\n" +
-                "Name='" + staffName + '\n' +
-                "Pay Period:" + payPeriod + '\n' +
-                "Gross Income:" + grossIncome + '\n' +
-                "Income Tax" + netIncome + '\n' +
-                "Net Income:" + netIncome + '\n' +
-                "Super:" + superAmount + '\n' +
-                "Thank you for using MYOB!";
+        return "\nYour payslip has been generated:\n" +
+                "Name= " + staffName + '\n' +
+                "Pay Period: " + payPeriod + '\n' +
+                "Gross Income: " + grossIncome + '\n' +
+                "Income Tax: " + (grossIncome - netIncome) + '\n' +
+                "Net Income: " + netIncome + '\n' +
+                "Super: " + superAmount + '\n' +
+                "\nThank you for using MYOB!";
     }
 }

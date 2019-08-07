@@ -38,7 +38,6 @@ public class Starter {
         BasicInfo basicInfo = controller.getBasicInfo();
         PayslipGenerator payslipGenerator = new PayslipGenerator(basicInfo);
         Payslip payslip = payslipGenerator.generatePayslip();
-        System.out.println("Here is your payslip:");
         System.out.println(payslip.toString());
     }
 

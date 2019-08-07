@@ -19,18 +19,18 @@ public class PayslipGenerator {
         int incomeTax = getIncomeTax();
         int netIncome = grossIncome - incomeTax;
         String staffName = basicInfo.getFullName();
-        return new Payslip(staffName, basicInfo.getAnnualSalary(),grossIncome,netIncome,superAmount, payPeriod);
+        return new Payslip(staffName, grossIncome, netIncome, superAmount, basicInfo.getPayPeriod());
     }
 
-    int getGrossIncome() {
+    private int getGrossIncome() {
         return Math.round(basicInfo.getAnnualSalary() / NUM_OF_MONTH);
     }
 
-    int getSuperAmount() {
+    private int getSuperAmount() {
         return Math.round(basicInfo.getAnnualSalary() * basicInfo.getSuperRate() / PERCENTAGE);
     }
 
-    int getIncomeTax() {
+    private int getIncomeTax() {
         double incomeTax;
         if (basicInfo.getAnnualSalary() <= 18200) {
             incomeTax = 0;
