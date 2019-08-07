@@ -32,18 +32,19 @@ public class PayslipGenerator {
 
     private int getIncomeTax() {
         double incomeTax;
-        if (basicInfo.getAnnualSalary() <= 18200) {
+        int annualSalary = basicInfo.getAnnualSalary();
+        if (annualSalary <= 18200) {
             incomeTax = 0;
-        } else if (basicInfo.getAnnualSalary() <= 37000) {
-            incomeTax = Math.floor((basicInfo.getAnnualSalary() - 18200) * 0.19);
-        } else if (basicInfo.getAnnualSalary() <= 87000) {
-            incomeTax = 3572 + Math.floor((basicInfo.getAnnualSalary() - 37000) * 0.325);
-        } else if (basicInfo.getAnnualSalary() <= 180000) {
-            incomeTax = 19822 + Math.floor((basicInfo.getAnnualSalary() - 87000) * 0.37);
+        } else if (annualSalary <= 37000) {
+            incomeTax = Math.floor((annualSalary - 18200) * 0.19);
+        } else if (annualSalary <= 87000) {
+            incomeTax = 3572 + Math.floor((annualSalary - 37000) * 0.325);
+        } else if (annualSalary <= 180000) {
+            incomeTax = 19822 + Math.floor((annualSalary - 87000) * 0.37);
         } else {
-            incomeTax = 54232 + Math.floor((basicInfo.getAnnualSalary() - 180000) * 0.45);
+            incomeTax = 54232 + Math.floor((annualSalary - 180000) * 0.45);
         }
-        return (int) Math.round(incomeTax / 12);
+        return (int) Math.round(incomeTax / NUM_OF_MONTH);
     }
 }
 
