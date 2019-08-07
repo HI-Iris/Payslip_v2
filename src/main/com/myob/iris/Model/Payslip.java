@@ -16,7 +16,6 @@ public class Payslip {
         this.payPeriod = payPeriod;
     }
 
-
     @Override
     public String toString() {
         return "\nYour payslip has been generated:\n" +

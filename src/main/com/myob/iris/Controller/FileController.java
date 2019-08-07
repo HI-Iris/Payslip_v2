@@ -4,7 +4,7 @@ import com.myob.iris.Model.BasicInfo;
 import com.myob.iris.Service.Validator;
 
 public class FileController extends Controller {
-    public FileController(Validator validator) {
+    FileController(Validator validator) {
         super(validator);
     }
 

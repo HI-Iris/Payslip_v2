@@ -22,7 +22,7 @@ public class Starter {
                 case "1":
                     System.out.println("New features coming soon");
                     controller = new FileController(validator);
-                    inputFlag = false;
+                    inputFlag = true;
                     break;
                 case "2":
                     System.out.println("Nice choice");

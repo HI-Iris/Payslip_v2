@@ -27,7 +27,7 @@ public class PayslipGenerator {
     }
 
     private int getSuperAmount() {
-        return Math.round(basicInfo.getAnnualSalary() * basicInfo.getSuperRate() / PERCENTAGE);
+        return Math.round(getGrossIncome() * basicInfo.getSuperRate() / PERCENTAGE);
     }
 
     private int getIncomeTax() {
